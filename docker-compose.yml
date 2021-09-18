@@ -21,7 +21,7 @@ services:
         ipv4_address: 10.7.0.2
   
   cloudflared:
-    image: cloudflare/cloudflared:2021.9.0-amd64
+    image: cloudflare/cloudflared:2021.9.0
     container_name: cloudflare_tunnel
     command: tunnel run
     volumes:
