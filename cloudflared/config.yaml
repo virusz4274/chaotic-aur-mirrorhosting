@@ -1,0 +1,3 @@
+url: http://10.7.0.4:80
+tunnel: your-tunnel_id
+credentials-file: /etc/cloudflared/your_credential.json
