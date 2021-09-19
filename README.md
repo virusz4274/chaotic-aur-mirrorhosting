@@ -19,6 +19,11 @@ Cloudflared will create a tunnel between Nginx Server and Cloudflare Edge comput
 * Docker and Docker compose installed
 * About 80GB of storage space
 
+## For People using ARM64 or RaspberryPi 
+
+* RUN ```docker build -t cloudflaredarm64 .```
+* change the image of cloudflared container to cloudflaredarm64 in the docker-compose.yml file
+
 ## Instruction
 
 1) Clone this repo 
