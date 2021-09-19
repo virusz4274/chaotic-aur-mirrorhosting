@@ -23,6 +23,8 @@ Cloudflared will create a tunnel between Nginx Server and Cloudflare Edge comput
 
 * RUN ```docker build -t cloudflaredarm64 .```
 * change the image of cloudflared container to cloudflaredarm64 in the docker-compose.yml file
+* You also need to build a docker image for nginx-server start by cloning this [repo](https://github.com/dceoy/docker-nginx-autoindex)
+* RUN ```docker build -t dceoy/nginx-autoindex .```
 
 ## Instruction
 
