@@ -9,7 +9,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ./syncthing:/config
+      - ./syncthing:/var/syncthing/config
       - ./srv/http/repos/chaotic-aur:/var/syncthing/chaotic-aur
     ports:
       - 8384:8384
