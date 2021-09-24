@@ -2,6 +2,8 @@
 
 This contains the docker compose file to deploy a chaotic-aur (aur.chaotic.cx ) mirror
 You dont need to have port forwarding working to deploy this mirror.
+Do note that tunnel speed can be very volatile. You wont be utlisizing full capacity of your bandwidth.
+If you want to deploy a normal mirror use this [docker-compose](https://github.com/virusz4274/myserver/blob/main/chaotic-aur-mirror/docker-compose.yml) file instead
 
 ## Inside the Docker Compose
 
