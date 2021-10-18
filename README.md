@@ -31,6 +31,7 @@ Cloudflared will create a tunnel between Nginx Server and Cloudflare Edge comput
 ## Instruction
 
 1) Clone this repo 
+   IN Mirror without portforwarding can goto chaotic-mirror-in folder and continue from step 4
 2) Get tokens for cloudflare
    * If you own domain, follow [this Guide](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide)
      You can generate a credentials from your local pc and transfer it to the cloudflared folder.
