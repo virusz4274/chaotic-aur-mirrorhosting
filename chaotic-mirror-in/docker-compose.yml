@@ -1,0 +1,48 @@
+version: "3"
+services:
+
+  syncthing:
+    image: syncthing/syncthing
+    container_name: syncthing
+    hostname: in-mirror-pool
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./syncthing:/var/syncthing/config
+      - ./srv/http/repos/chaotic-aur:/var/syncthing/chaotic-aur
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+    restart: unless-stopped
+    networks:
+      mirror_network:
+        ipv4_address: 10.7.0.2
+  
+  cloudflared:
+    image: cloudflare/cloudflared:2021.10.3
+    container_name: cloudflare_tunnel
+    command: tunnel run
+    volumes:
+      - './cloudflared:/etc/cloudflared'
+    networks:
+      mirror_network:
+        ipv4_address: 10.7.0.3
+  
+  nginx_builds:
+    image: dceoy/nginx-autoindex:latest
+    container_name: nginx_chaotic
+    restart: always
+    volumes:
+      - './srv/http/repos/:/var/lib/nginx/html/repos:ro'
+    networks:
+      mirror_network:
+        ipv4_address: 10.7.0.4
+
+networks:
+  mirror_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.7.0.0/24
