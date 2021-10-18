@@ -39,8 +39,7 @@ Cloudflared will create a tunnel between Nginx Server and Cloudflare Edge comput
 3) Edit the config.yml inside cloudflared folder 
 4) Run docker-compose up -d 
 5) change folder ownership
-    * ```cd srv/http/repos/```
-    * ```sudo chown $USER:$USER -R chaotic-aur/```
+    * ```sudo chown -R $USER:$USER .```
 6) Open syncthing web interface by visting (http://localhost:8384)
     * Add device: ZDHVMSP-EW4TMWX-DBH2W4P-HV5A6OY-BBEFABO-QTENANJ-RJ6GKNX-6KCG7QY, then check "Introducer" and "Auto accept"
     * Select Add Folder
